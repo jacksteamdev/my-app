@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "my_app_browser_extension",
+  "version": "0.1",
+  "description": "My App Browser Extension",
+  "permissions": [],
+  "action": {
+    "default_popup": "src/popup.html"
+  },
+  "background": {
+    "service_worker": "src/ext/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_end",
+      "all_frames": false,
+      "js": ["src/ext/content.js"]
+    }
+  ]
+}

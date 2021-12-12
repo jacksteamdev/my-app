@@ -1,0 +1,21 @@
+{
+  "manifest_version": 3,
+  "name": "My Extension",
+  "version": "0.1",
+  "description": "My Extension",
+  "permissions": [],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "background": {
+    "service_worker": "js/background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "run_at": "document_end",
+      "all_frames": false,
+      "js": ["js/content.js"]
+    }
+  ]
+}
